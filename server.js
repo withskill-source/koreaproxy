@@ -115,8 +115,7 @@ app.get('/api/games', (req, res) => {
             url: 'https://www.google.com/logos/2010/pacman10-i.html',
             thumbnail: 'PM',
             color: '#f1c40f',
-            description: 'Classic arcade maze game',
-            category: 'action'
+            description: 'Classic arcade maze game'
         }
     ];
     
