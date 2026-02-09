@@ -112,7 +112,7 @@ app.get('/api/games', (req, res) => {
         {
             id: 6,
             name: 'Pac-Man',
-            url: 'https://pacman.com/en/',
+            url: 'https://www.google.com/logos/2010/pacman10-i.html',
             thumbnail: 'PM',
             color: '#f1c40f',
             description: 'Classic arcade maze game',
