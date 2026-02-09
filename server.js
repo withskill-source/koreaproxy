@@ -1,4 +1,4 @@
-    const express = require('express');
+const express = require('express');
 const path = require('path');
 const cors = require('cors');
 const app = express();
@@ -69,90 +69,46 @@ app.get('/api/games', (req, res) => {
             id: 1,
             name: 'Minecraft Classic',
             url: 'https://classic.minecraft.net',
-            thumbnail: 'mc',
+            thumbnail: '⛏️',
             color: '#2ecc71',
-            description: 'Build and explore in creative mode'
-        },
-        {
-            id: 2,
-            name: '1v1.LOL',
-            url: 'https://1v1lol.github.io/game/',
-            thumbnail: '1v1',
-            color: '#e67e22',
-            description: 'Battle royale building game',
+            description: 'Build and explore in creative mode',
             category: 'action'
         },
         {
+            id: 2,
+            name: 'Monkeytype',
+            url: 'https://monkeytype.com',
+            thumbnail: '⌨️',
+            color: '#e2b714',
+            description: 'Practice your typing speed',
+            category: 'typing'
+        },
+        {
             id: 3,
-            name: 'Slope',
-            url: 'https://slope-game.github.io/rungame/',
-            thumbnail: 'SL',
-            color: '#9b59b6',
-            description: 'Fast-paced 3D running game',
+            name: 'Slither.io',
+            url: 'https://slither.io',
+            thumbnail: '🐍',
+            color: '#8e44ad',
+            description: 'Snake battle game',
             category: 'action'
         },
         {
             id: 4,
             name: '2048',
             url: 'https://play2048.co',
-            thumbnail: '2048',
-            color: '#34495e',
+            thumbnail: '🔢',
+            color: '#f39c12',
             description: 'Classic number puzzle game',
             category: 'puzzle'
         },
         {
             id: 5,
-            name: 'Tetris',
-            url: 'https://tetr.io',
-            thumbnail: 'TT',
-            color: '#3498db',
-            description: 'Classic falling blocks puzzle',
-            category: 'puzzle'
+            name: 'Krunker.io',
+            url: 'https://krunker.io',
+            thumbnail: '🎯',
+            color: '#e74c3c',
+            description: 'Fast-paced FPS shooter',
+            category: 'action'
         },
         {
-            id: 6,
-            name: 'Pac-Man',
-            url: 'https://www.google.com/logos/2010/pacman10-i.html',
-            thumbnail: 'PM',
-            color: '#f1c40f',
-            description: 'Classic arcade maze game'
-        }
-    ];
-    
-    res.json(games);
-});
-
-// 통계 API (수익화 추적용)
-let stats = {
-    visits: 0,
-    proxyRequests: 0,
-    gameClicks: 0
-};
-
-app.get('/api/stats', (req, res) => {
-    res.json(stats);
-});
-
-app.post('/api/track', (req, res) => {
-    const { type } = req.body;
-    if (type === 'visit') stats.visits++;
-    if (type === 'proxy') stats.proxyRequests++;
-    if (type === 'game') stats.gameClicks++;
-    res.json({ success: true, stats });
-});
-
-// 서버 시작
-app.listen(port, () => {
-    console.log('╔═══════════════════════════════════════════════╗');
-    console.log('║  🚀 SwiftAccess Proxy Server Running!       ║');
-    console.log('╚═══════════════════════════════════════════════╝');
-    console.log('');
-    console.log(`📡 Server URL: http://localhost:${port}`);
-    console.log(`🎮 Games Page: http://localhost:${port}/games`);
-    console.log('');
-    console.log('📊 Stats available at: /api/stats');
-    console.log('💰 Ready for monetization!');
-    console.log('');
-    console.log('Press Ctrl+C to stop the server');
-    console.log('═══════════════════════════════════════════════');
-});
+            id:
