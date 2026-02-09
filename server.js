@@ -111,4 +111,62 @@ app.get('/api/games', (req, res) => {
             category: 'action'
         },
         {
-            id:
+            id: 6,
+            name: 'Shell Shockers',
+            url: 'https://shellshock.io',
+            thumbnail: '🥚',
+            color: '#ff6b6b',
+            description: 'Egg shooting game',
+            category: 'action'
+        }
+    ];
+    
+    res.json(games);
+});
+
+// 통계 API (수익화 추적용)
+let stats = {
+    visits: 0,
+    proxyRequests: 0,
+    gameClicks: 0
+};
+
+app.get('/api/stats', (req, res) => {
+    res.json(stats);
+});
+
+app.post('/api/track', (req, res) => {
+    const { type } = req.body;
+    
+    switch(type) {
+        case 'visit':
+            stats.visits++;
+            break;
+        case 'proxy':
+            stats.proxyRequests++;
+            break;
+        case 'game':
+            stats.gameClicks++;
+            break;
+    }
+    
+    res.json({ success: true, stats });
+});
+
+// 서버 시작
+app.listen(port, () => {
+    console.log(`
+╔═══════════════════════════════════════════════╗
+║  🚀 SwiftAccess Proxy Server Running!       ║
+╚═══════════════════════════════════════════════╝
+
+📡 Server URL: http://localhost:${port}
+🎮 Games Page: http://localhost:${port}/games
+
+📊 Stats available at: /api/stats
+💰 Ready for monetization!
+
+Press Ctrl+C to stop the server
+═══════════════════════════════════════════════
+    `);
+});
