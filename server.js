@@ -1,4 +1,4 @@
-const express = require('express');
+    const express = require('express');
 const path = require('path');
 const cors = require('cors');
 const app = express();
@@ -76,18 +76,20 @@ app.get('/api/games', (req, res) => {
         {
             id: 2,
             name: '1v1.LOL',
-            url: 'https://1v1.lol',
+            url: 'https://1v1lol.github.io/game/',
             thumbnail: '1v1',
             color: '#e67e22',
-            description: 'Battle royale building game'
+            description: 'Battle royale building game',
+            category: 'action'
         },
         {
             id: 3,
             name: 'Slope',
-            url: 'https://slope-game.github.io/slope/index.html',
+            url: 'https://slope-game.github.io/rungame/',
             thumbnail: 'SL',
             color: '#9b59b6',
-            description: 'Fast-paced 3D running game'
+            description: 'Fast-paced 3D running game',
+            category: 'action'
         },
         {
             id: 4,
@@ -95,23 +97,26 @@ app.get('/api/games', (req, res) => {
             url: 'https://play2048.co',
             thumbnail: '2048',
             color: '#34495e',
-            description: 'Classic number puzzle game'
+            description: 'Classic number puzzle game',
+            category: 'puzzle'
         },
         {
             id: 5,
             name: 'Tetris',
-            url: 'https://tetris.com/play-tetris',
+            url: 'https://tetr.io',
             thumbnail: 'TT',
             color: '#3498db',
-            description: 'Classic falling blocks puzzle'
+            description: 'Classic falling blocks puzzle',
+            category: 'puzzle'
         },
         {
             id: 6,
             name: 'Pac-Man',
-            url: 'https://www.google.com/logos/2010/pacman10-i.html',
+            url: 'https://pacman.com/en/',
             thumbnail: 'PM',
             color: '#f1c40f',
-            description: 'Classic arcade maze game'
+            description: 'Classic arcade maze game',
+            category: 'action'
         }
     ];
     
