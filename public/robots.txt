@@ -1,0 +1,16 @@
+# robots.txt for SwiftAccess
+
+User-agent: *
+Allow: /
+Allow: /games
+Allow: /api/stats
+
+# Disallow admin or private paths
+Disallow: /admin/
+Disallow: /api/track
+
+# Sitemap location
+Sitemap: https://koreaproxy.com/sitemap.xml
+
+# Crawl-delay (optional, helps prevent server overload)
+Crawl-delay: 1

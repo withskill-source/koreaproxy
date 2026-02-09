@@ -1,0 +1,486 @@
+/* ==================== 기본 리셋 & 변수 ==================== */
+:root {
+    --primary: #00f2ea;
+    --secondary: #ff0050;
+    --bg-dark: #0a0a0a;
+    --bg-card: #1a1a1a;
+    --bg-hover: #2a2a2a;
+    --text-main: #ffffff;
+    --text-dim: #cccccc;
+    --text-muted: #666666;
+    --border: #333333;
+    --success: #2ecc71;
+    --warning: #f1c40f;
+}
+
+* { 
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
+}
+
+body {
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--bg-dark);
+    color: var(--text-main);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* ==================== 광고 컨테이너 ==================== */
+.ad-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+    padding: 10px;
+}
+
+.ad-placeholder {
+    background: var(--bg-card);
+    border: 2px dashed var(--border);
+    border-radius: 12px;
+    padding: 30px;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.ad-placeholder:hover {
+    border-color: var(--primary);
+    background: rgba(0, 242, 234, 0.05);
+}
+
+.ad-placeholder i {
+    font-size: 24px;
+    display: block;
+    margin-bottom: 10px;
+    opacity: 0.5;
+}
+
+.top-ad .ad-placeholder {
+    max-width: 728px;
+    min-height: 90px;
+}
+
+.ad-hint {
+    font-size: 12px;
+    color: var(--success);
+    margin-top: 5px;
+}
+
+/* ==================== 메인 컨테이너 ==================== */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    flex: 1;
+}
+
+/* ==================== 헤더 ==================== */
+header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.logo {
+    font-size: 3.5rem;
+    font-weight: 900;
+    margin-bottom: 10px;
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    animation: fadeInDown 0.8s ease;
+}
+
+.logo-icon {
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.logo-text {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.tagline {
+    font-size: 1.1rem;
+    color: var(--text-dim);
+    margin-bottom: 30px;
+    animation: fadeIn 1s ease 0.3s both;
+}
+
+/* ==================== 검색창 ==================== */
+.search-box {
+    max-width: 700px;
+    margin: 0 auto 20px;
+    animation: fadeIn 1s ease 0.5s both;
+}
+
+.search-box form {
+    display: flex;
+    box-shadow: 0 10px 40px rgba(0, 242, 234, 0.2);
+    border-radius: 50px;
+    overflow: hidden;
+}
+
+.search-box input {
+    flex: 1;
+    padding: 18px 25px;
+    border: 2px solid transparent;
+    background: var(--bg-card);
+    color: var(--text-main);
+    font-size: 16px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.search-box input:focus {
+    border-color: var(--primary);
+    background: var(--bg-hover);
+}
+
+.search-box button {
+    padding: 18px 35px;
+    border: none;
+    background: linear-gradient(135deg, var(--primary), #00c2bd);
+    color: #000;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.search-box button:hover {
+    transform: translateX(5px);
+    box-shadow: 0 5px 20px rgba(0, 242, 234, 0.4);
+}
+
+.quick-tips {
+    text-align: center;
+    margin-top: 10px;
+    color: var(--text-muted);
+}
+
+/* ==================== 통계 바 ==================== */
+.stats-bar {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+    padding: 20px;
+    background: var(--bg-card);
+    border-radius: 15px;
+    border: 1px solid var(--border);
+    animation: fadeIn 1s ease 0.7s both;
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-dim);
+    font-size: 14px;
+}
+
+.stat-item i {
+    color: var(--primary);
+    font-size: 18px;
+}
+
+.stat-item span {
+    font-weight: 700;
+    color: var(--primary);
+}
+
+/* ==================== 섹션 ==================== */
+section {
+    margin-bottom: 50px;
+    animation: fadeInUp 0.8s ease both;
+}
+
+section h3 {
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    border-left: 5px solid var(--secondary);
+    padding-left: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+section h3 i {
+    color: var(--secondary);
+}
+
+/* ==================== 그리드 ==================== */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 20px;
+}
+
+/* ==================== 카드 ==================== */
+.card {
+    background: var(--bg-card);
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 0;
+}
+
+.card:hover::before {
+    opacity: 0.1;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    border-color: var(--primary);
+    box-shadow: 0 10px 30px rgba(0, 242, 234, 0.3);
+}
+
+.card > * {
+    position: relative;
+    z-index: 1;
+}
+
+.card i {
+    font-size: 36px;
+    margin-bottom: 12px;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.card:hover i {
+    transform: scale(1.2);
+}
+
+.card span {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-dim);
+    display: block;
+}
+
+/* ==================== 앱 카드 ==================== */
+.card-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: #000;
+    padding: 8px;
+    font-size: 12px;
+    font-weight: 700;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.app-card:hover .card-overlay {
+    transform: translateY(0);
+}
+
+/* ==================== 게임 카드 ==================== */
+.game-thumb {
+    width: 70px;
+    height: 70px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    font-size: 24px;
+    color: white;
+    margin: 0 auto 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.game-card:hover .game-thumb {
+    transform: rotate(5deg) scale(1.1);
+}
+
+/* ==================== 기능 카드 ==================== */
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.feature-card {
+    background: var(--bg-card);
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+    border-color: var(--primary);
+    transform: translateY(-5px);
+}
+
+.feature-card i {
+    font-size: 48px;
+    color: var(--primary);
+    margin-bottom: 15px;
+    display: block;
+}
+
+.feature-card h4 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+.feature-card p {
+    color: var(--text-dim);
+    font-size: 14px;
+}
+
+/* ==================== 버튼 ==================== */
+.view-more {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.btn-secondary {
+    display: inline-block;
+    padding: 15px 40px;
+    background: var(--bg-card);
+    color: var(--text-main);
+    text-decoration: none;
+    border-radius: 50px;
+    border: 2px solid var(--primary);
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background: var(--primary);
+    color: #000;
+    transform: scale(1.05);
+}
+
+/* ==================== 푸터 ==================== */
+footer {
+    background: var(--bg-card);
+    padding: 30px 20px;
+    text-align: center;
+    border-top: 2px solid var(--border);
+    margin-top: 50px;
+}
+
+footer p {
+    color: var(--text-muted);
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.disclaimer {
+    color: var(--warning) !important;
+    font-weight: 600;
+}
+
+/* ==================== 애니메이션 ==================== */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ==================== 반응형 ==================== */
+@media (max-width: 768px) {
+    .logo {
+        font-size: 2.5rem;
+    }
+    
+    .stats-bar {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .grid {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    }
+}
+
+/* ==================== 알림 ==================== */
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 15px 25px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+    z-index: 10000;
+    opacity: 0;
+    transform: translateX(400px);
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.notification.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.notification-success {
+    background: linear-gradient(135deg, #2ecc71, #27ae60);
+    color: white;
+}
